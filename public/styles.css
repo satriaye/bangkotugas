@@ -1,0 +1,208 @@
+section{
+    width: 100%;
+    height: 2000px;
+    background-size: 400% 400%;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #73e6da 100%);
+    position: relative;
+    animation: mymove 10s ease infinite;
+}
+
+@keyframes mymove {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+
+}
+
+.section-login{
+    width: 100%;
+    height: 100vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #73e6da 100%);
+    background-size: 400% 400%;
+    position: relative;
+    animation: mymove 10s ease infinite;
+}
+
+.inline-form {
+    display: inline-block;
+    /* Membuat elemen sebaris */
+    max-width: 200px;
+    
+    margin-right: 10px;
+    margin-bottom: 1px;
+}
+
+.inline-lebar {
+    display: inline-block;
+    /* Membuat elemen sebaris */
+    max-width: 500px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.inline-kecil {
+    display: inline-block;
+    /* Membuat elemen sebaris */
+    max-width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.spasihari {
+    margin-right: 30px;
+    /* Ubah nilai ini sesuai kebutuhan Anda */
+}
+.spasiwaktu {
+    margin-right: 80px;
+    /* Ubah nilai ini sesuai kebutuhan Anda */
+}
+.spasitempat {
+    margin-right: 70px;
+    /* Ubah nilai ini sesuai kebutuhan Anda */
+}
+
+#statusjabatankakap-wrapper {
+    display: none;
+    /* Sembunyikan secara default */
+}
+.custom-form {
+    max-width: 1600px;
+}
+
+/* Menambahkan padding pada bagian bawah kartu */
+.card-body {
+    padding-bottom: 20px;
+    /* Sesuaikan sesuai kebutuhan */
+}
+
+/* Mengatur margin pada tombol "Kirim" */
+.btn-submit {
+    margin-top: 20px;
+    /* Sesuaikan sesuai kebutuhan */
+}
+
+/* style.css */
+
+/* Set tinggi maksimum untuk tabel */
+.table-scrollable {
+    max-height: 400px;
+    /* Sesuaikan dengan tinggi yang Anda inginkan */
+    overflow-y: auto;
+    /* Menyembunyikan scrollbar horizontal */
+    overflow-x: hidden;
+
+}
+
+/* Menyesuaikan lebar tabel dan kolom */
+.table-scrollable table {
+    width: 100%;
+    /* Lebar tabel mengikuti lebar container */
+    table-layout: fixed;
+    /* Tetapkan lebar kolom */
+}
+
+/* Menyesuaikan lebar kolom */
+.table-scrollable th,
+.table-scrollable td {
+    width: calc(100% / 5);
+    /* Menggunakan 5 kolom sebelum scroll */
+}
+
+/* Sesuaikan lebar input pencarian */
+.search-container {
+    position: relative;
+    float: right;
+    margin-top: 10px;
+    /* Sesuaikan dengan tinggi input */
+}
+
+/* Sesuaikan lebar input pencarian */
+#searchInput {
+    width: 200px;
+}
+
+/* Untuk layar dengan lebar maksimum 767px (misalnya perangkat seluler) */
+@media (max-width: 767px) {
+    section {
+        height: auto;
+        /* Sesuaikan tinggi dengan konten */
+    }
+
+    .card-custom {
+        padding: 20px;
+        /* Ubah padding kartu untuk memberikan ruang di sekitar konten */
+    }
+
+    .custom-form {
+        max-width: none;
+        /* Hapus pembatasan lebar untuk form */
+    }
+
+    /* Menyesuaikan lebar kolom untuk formulir */
+    .form-group {
+        width: 100%;
+        /* Mengisi lebar penuh untuk formulir */
+        margin-bottom: 10px;
+        /* Ubah margin bawah untuk memberikan ruang antara elemen */
+    }
+
+    /* Menyesuaikan lebar input */
+    input[type="text"],
+    textarea {
+        width: 100%;
+        /* Mengisi lebar penuh untuk input teks dan textarea */
+    }
+
+    /* Menyesuaikan lebar tombol */
+    .btn {
+        width: 100%;
+        /* Mengisi lebar penuh untuk tombol */
+    }
+
+    /* Menyesuaikan margin untuk elemen dalam baris */
+    .form-row {
+        margin-bottom: 10px;
+        /* Ubah margin bawah untuk memberikan ruang antara baris */
+    }
+
+    /* Menyesuaikan margin untuk elemen inline */
+    .inline-form,
+    .inline-lebar,
+    .inline-kecil {
+        max-width: 100%;
+        /* Mengisi lebar penuh untuk elemen inline */
+        margin-right: 0;
+        /* Hapus margin kanan untuk menghindari tumpang tindih */
+        margin-bottom: 10px;
+        /* Ubah margin bawah untuk memberikan ruang antara elemen */
+    }
+
+    /* Menyesuaikan margin untuk elemen dengan spasi */
+    .spasihari,
+    .spasiwaktu,
+    .spasitempat {
+        margin-right: 0;
+        /* Hapus margin kanan untuk menghindari tumpang tindih */
+    }
+
+    /* Mengubah ukuran teks agar lebih kecil */
+    h1,
+    p,
+    label,
+    small {
+        font-size: 12px;
+        /* Mengurangi ukuran teks agar lebih kecil */
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "api/*.php", "use": "vercel-php@0.7.0" }
+  ],
+  "routes": [
+    { "src": "/api/test.php", "dest": "/api/test.php" },
+    { "src": "/api/test2.php", "dest": "/api/test2.php" },
+    { "src": "/api/test3.php", "dest": "/api/test3.php" },
+    { "src": "/api/test4.php", "dest": "/api/test4.php" },
+    { "src": "/api/test5.php", "dest": "/api/test5.php" },
+    { "src": "/api/test6.php", "dest": "/api/test6.php" },
+    { "src": "/views/tugas1orang.html", "dest": "/views/tugas1orang.html" },
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
+}

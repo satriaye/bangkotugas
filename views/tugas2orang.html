@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangko Tugas</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.11.3/css/bootstrap-datepicker.min.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="ruang-admin.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body>
+     <section>
+    <div class="container-login">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <div class="card shadow-sm my-5">
+                    <div class="card-body p-8 card-custom">
+
+
+
+                        <div class="container mt-5">
+                            <h1 class="text-center">Form Rencana Perjalanan Dinas</h1>
+                            <p class="text-center">Silakan isi formulir di bawah ini:</p><br>
+                            <form id="myForm" action="api/test2.php" method="POST" class="custom-form">
+                                <p>Sehubungan dengan</p>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <textarea class="form-control" id="latarbelakang" name="latarbelakang" rows="2"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                                <p>dengan ini akan dilakukan perjalanan dinas dengan rincian sebagai berikut:</p>
+                                <br>
+                                <br>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="nama">1. Nama</label>
+                                        <input type="text" class="form-control" id="nama" name="nama" required>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="nip">NIP</label>
+                                        <input type="text" class="form-control" id="nip" name="nip" required readonly>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="pangkat">Pangkat</label>
+                                        <input type="text" class="form-control" id="pangkat" name="pangkat" required
+                                            readonly>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="jabatan">Jabatan</label>
+                                        <input type="text" class="form-control" id="jabatan" name="jabatan" required
+                                            readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="nama2">2. Nama</label>
+                                        <input type="text" class="form-control" id="nama2" name="nama2" required>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="nip2">NIP</label>
+                                        <input type="text" class="form-control" id="nip2" name="nip2" required readonly>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="pangkat2">Pangkat</label>
+                                        <input type="text" class="form-control" id="pangkat2" name="pangkat2" required
+                                            readonly>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="jabatan2">Jabatan</label>
+                                        <input type="text" class="form-control" id="jabatan2" name="jabatan2" required
+                                            readonly>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="harimulai">3. Hari Mulai </label>
+                                        <input type="text" class="form-control" id="harimulai" name="harimulai"
+                                            required>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="hariselesai">Hari Selesai </label>
+                                        <input type="text" class="form-control" id="hariselesai" name="hariselesai"
+                                            required>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="waktuDari">Waktu Mulai</label>
+                                        <input type="text" class="form-control" id="waktuDari" name="waktuDari"
+                                            required>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="waktuSampai">Waktu Selesai</label>
+                                        <input type="text" class="form-control" id="waktuSampai" name="waktuSampai"
+                                            required>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="alamat">4.Tempat Tujuan</label>
+                                        <input type="text" class="form-control" id="alamat" name="alamat" required>
+                                        <small class="form-text text-muted">cth : KP2KP Sarolangun</small>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="tempat">Daerah</label>
+                                        <input type="text" class="form-control" id="tempat" name="tempat"
+                                            list="tempatlist" required>
+                                        <datalist id="tempatlist">
+                                            <option value="Merangin">
+                                            <option value="Sarolangun">
+                                            <option value="Sungai Penuh">
+                                            <option value="Kerinci">
+                                            <option value="Sungai Penuh dan Kerinci">
+                                        </datalist>
+
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="lama">Lama Hari</label>
+                                        <input type="text" class="form-control" id="lama" name="lama" required readonly>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="agenda">5. Agenda</label>
+                                        <textarea class="form-control" id="agenda" name="agenda" rows="5"
+                                            required></textarea>
+                                        <small class="form-text text-muted">Jika berupa poin2 pakai "-" dan enter untuk
+                                            baris lain</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="output">6. Output yang Akan Dicapai</label>
+                                        <textarea class="form-control" id="output" name="output" rows="5"
+                                            required></textarea>
+                                        <small class="form-text text-muted">Jika berupa poin2 pakai "-" dan enter untuk
+                                            baris lain</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="sarpras">7. Sarana & Prasarana</label>
+                                        <textarea class="form-control" id="sarpras" name="sarpras" rows="5"
+                                            required></textarea>
+                                        <small class="form-text text-muted">Jika berupa poin2 pakai "-" dan enter untuk
+                                            baris lain</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="statuskakap">Status Kakap</label>
+                                        <select class="form-control" id="statuskakap" name="statuskakap">
+                                            <option value=""></option>
+                                            <option value="Plh.">Plh.</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" id="hiddenStatusjabatankakap" name="statusjabatankakap">
+                                    <div class="form-group col">
+                                        <label for="kakap">Kepala Kantor</label>
+                                        <input type="text" class="form-control" id="kakap" name="kakap"
+                                            value="Jarod Sri Raharjo">
+                                    </div>
+                                </div>
+                                 <div class="form-row">
+                                     <div class="form-group col">
+                                         <label for="tanggalinput">Tanggal Input</label>
+                                         <input type="text" class="form-control" id="tanggalinput" name="tanggalinput"
+                                             readonly>
+                                     </div>
+                                 </div>
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-primary" id="buatDocx" value="Buat RPD"
+                                        onclick="handleBuatRPD()">
+
+                                    <button type="button" class="btn btn-info" id="cekMobil"
+                                        onclick="handleCekMobil()">Cek
+                                        Ketersediaan Kendaraan</button>
+                                </div>
+                        </div>
+                        <!-- Modal Cek Mobil -->
+                        <div class="modal fade" id="modalCekMobil" tabindex="-1" aria-labelledby="modalCekMobilLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="overlapModalLabel" style="text-align: center;">Cek
+                                            Ketersediaan Mobil
+                                            Dinas</h4>
+                                    </div>
+                                    <div class="modal-body" style="height: 600px;">
+                                        <p id="overlapMessage" style="text-align: center; font-size: 16px"></p>
+                                        <br>
+                                        <table class="table table-bordered" id="dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">No.</th>
+                                                    <th style="text-align: center;">Pegawai</th>
+                                                    <th style="text-align: center;">Tujuan</th>
+                                                    <th style="text-align: center;">Tanggal Berangkat</th>
+                                                    <th style="text-align: center;">Tanggal Pulang</th>
+                                                    <th style="text-align: center;">Mobil Dinas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                        <br>
+
+                                        <p id="overlapSisamobil"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.11.3/js/bootstrap-datepicker.min.js">
+    </script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/id.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
+
+    <script>
+        function showSuccessMessage() {
+            alert("Data berhasil dikirim ke Kepegawaian!"); 
+        }
+
+
+        //Status Kakap
+        document.addEventListener("DOMContentLoaded", function() {
+        var statuskakap = document.getElementById("statuskakap");
+        var hiddenStatusjabatankakap = document.getElementById("hiddenStatusjabatankakap");
+
+        statuskakap.addEventListener("change", function() {
+        if (statuskakap.value === "Plh.") {
+        // Set nilai statusjabatankakap pada input hidden
+        hiddenStatusjabatankakap.value = "Kepala Kantor Pelayanan Pajak Pratama Bangko";
+        } else {
+        hiddenStatusjabatankakap.value = ""; // Kosongkan nilai jika statuskakap tidak terpilih
+        }
+        });
+
+        if (statuskakap.value === "Plh.") {
+        hiddenStatusjabatankakap.value = "Kepala Kantor Pelayanan Pajak Pratama Bangko";
+        } else {
+        hiddenStatusjabatankakap.value = "";
+        }
+        });
+
+
+
+
+
+       // datepciker format
+      document.addEventListener("DOMContentLoaded", function () {
+        var today = new Date(); 
+        var harimulaiFlatpickr = flatpickr("#harimulai", {
+          dateFormat: "l, d F Y", 
+          locale: "id", 
+          minDate: today,
+          onClose: function (selectedDates, dateStr, instance) {
+            var formattedDate = instance.formatDate(selectedDates[0], "l, d F Y");
+            $("#harimulai").val(formattedDate); 
+            $("#harimulai").data("original-date", selectedDates[0].toISOString().slice(0,
+              10)); 
+
+          
+            hariselesaiFlatpickr.set("minDate", selectedDates[0]);
+
+            if ($("#harimulai").val() !== "") {
+              hariselesaiFlatpickr.set("disabled", false);
+            } else {
+              hariselesaiFlatpickr
+                .clear(); 
+              hariselesaiFlatpickr.set("disabled",
+                true
+              ); 
+            }
+          }
+        });
+
+        var hariselesaiFlatpickr = flatpickr("#hariselesai", {
+          dateFormat: "l, d F Y", 
+          locale: "id", 
+          minDate: today,
+          onClose: function (selectedDates, dateStr, instance) {
+            var formattedDate = instance.formatDate(selectedDates[0], "l, d F Y");
+            $("#hariselesai").val(formattedDate); 
+            $("#hariselesai").data("original-date", selectedDates[0].toISOString().slice(0,
+              10)); 
+
+            // Hitung lama hari
+            var startDate = harimulaiFlatpickr.selectedDates[0];
+            var endDate = selectedDates[0];
+            var diffTime = Math.abs(endDate - startDate);
+            var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            // Set nilai lama hari
+            $("#lama").val(diffDays +
+              1); // Ditambah 1 karena mulai dan selesai dihitung sebagai 1 hari
+
+            // Jika tanggal selesai belum dipilih, nonaktifkan input lama hari
+            if (!endDate) {
+              $("#lama").val('');
+              $("#lama").prop('readonly', true);
+            } else {
+
+            }
+          }
+        });
+
+            // Nonaktifkan input field "Hari Selesai" secara default
+            hariselesaiFlatpickr.set("disabled", true);
+        });
+        // Inisialisasi time picker untuk form waktu
+        document.addEventListener("DOMContentLoaded", function () {
+            flatpickr("#waktuDari", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i", 
+            });
+
+            flatpickr("#waktuSampai", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i", 
+            });
+        });
+
+         // konvert format "l, d F Y" ke format "YYYY-MM-DD"
+         function formatDateToISO(dateString) {
+         const parts = dateString.split(', '); // Membagi string menjadi array
+         const [day, date, month, year] = parts[0].split(' '); // Memisahkan hari, tanggal, bulan, tahun
+         const months = {
+         'Januari': '01',
+         'Februari': '02',
+         'Maret': '03',
+         'April': '04',
+         'Mei': '05',
+         'Juni': '06',
+         'Juli': '07',
+         'Agustus': '08',
+         'September': '09',
+         'Oktober': '10',
+         'November': '11',
+         'Desember': '12'
+         };
+         const formattedDate = `${year}-${months[month]}-${date}`; // Menggabungkan kembali dalam format YYYY-MM-DD
+         return formattedDate;
+         }
+
+         // Mengambil nilai dari form dan mengonversi format tanggal
+         var harimulai = formatDateToISO($("#harimulai").val());
+         var hariselesai = formatDateToISO($("#hariselesai").val());
+
+
+
+        // Daftar pilihan autocomplete
+        document.addEventListener("DOMContentLoaded", function () {
+            $("#nama").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/getAutocompleteOptions', // Ubah URL ke endpoint yang sesuai pada index.js
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    $("#nip").val(ui.item.nip); // Isi otomatis form nip
+                    $("#pangkat").val(ui.item.pangkat);
+                    $("#jabatan").val(ui.item.jabatan); // Isi otomatis form pangkat
+                }
+            });
+            $("#nama2").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/getAutocompleteOptions', // Endpoint untuk autocomplete
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    // Setelah nama dipilih, isi otomatis form NIP, pangkat, dan jabatan untuk nama2
+                    $("#nip2").val(ui.item.nip); // asumsikan struktur data yang dikembalikan sama
+                    $("#pangkat2").val(ui.item.pangkat);
+                    $("#jabatan2").val(ui.item.jabatan);
+                }
+            });
+
+
+        });
+
+
+        
+// Tambahkan fungsi handleCekMobil()
+      function handleCekMobil() {
+        var harimulai = $("#harimulai").val();
+        var hariselesai = $("#hariselesai").val();
+        var tempat = $("#tempat").val();
+
+       
+         if (!harimulai || !hariselesai || !tempat) {
+        
+         Swal.fire({
+         icon: 'error',
+         title: 'Waduh',
+         text: 'Mohon diisi form Hari Mulai, Hari Selesai, dan Daerah terlebih dahulu!',
+         });
+         return;
+         }
+
+        
+
+        // Konversi tanggal dari format input ke format yang sesuai (YYYY-MM-DD)
+        var formattedStart = moment(harimulai, "dddd, DD MMMM YYYY").format("YYYY-MM-DD");
+        var formattedEnd = moment(hariselesai, "dddd, DD MMMM YYYY").format("YYYY-MM-DD");
+
+    
+
+        // Buat objek data yang akan dikirim
+        var formData = new URLSearchParams();
+        formData.append('harimulai', harimulai);
+        formData.append('hariselesai', hariselesai);
+        formData.append('tempat', tempat);
+
+       
+
+        
+        fetch("/checkDates", {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            const availableCarsString = data.availableCars.join(', ');
+            $("#overlapSisamobil").text(`Mobil dinas yang tersedia: ${availableCarsString}`);
+            if (data.overlapping) {
+              $("#overlapMessage").text(
+                `Ada pegawai lain yang berangkat di hari dan lokasi yang sama dengan anda. Koordinasikan terkait
+        transportasi dan akomodasi agar lebih efisien.`
+              );
+              
+              // Kosongkan tabel sebelum menambahkan data baru
+              $("#dataTable tbody").empty();
+
+              // Tambahkan baris data untuk setiap entri data yang diterima
+              data.overlappingData.forEach((entry, index) => {
+              const namewith = `${entry.name} dkk.`;
+              const formattedStartdate = moment(entry.startDate, "YYYY-MM-DD").format(
+              "dddd, DD MMMM YYYY");
+              const formattedEnddate = moment(entry.endDate, "YYYY-MM-DD").format(
+              "dddd, DD MMMM YYYY");
+              $("#dataTable tbody").append(`<tr>
+                  <td>${index + 1}</td>
+                  <td>${namewith}</td>
+                  <td>${entry.location}</td>
+                  <td>${formattedStartdate}</td>
+                  <td>${formattedEnddate}</td>
+                  <td>${entry.mobildinas}</td>
+              </tr>`);
+              });
+            } else {
+              var tbody = document.querySelector('#modalCekMobil tbody');
+              tbody.innerHTML =
+                '<tr><td colspan="5" style="text-align: center;">Tidak ada pegawai dengan jadwal berangkat dan lokasi yang sama</td></tr>';
+              $("#overlapMessage").text(
+                'Hanya anda dan rombongan yang ke tempat tujuan di hari berangkat yang anda tentukan'
+              );
+
+              
+            }
+
+            
+
+            $('#modalCekMobil').on('hidden.bs.modal', function () {
+              // Membersihkan konten modal
+              $("#overlapMessage").empty();
+              $("#dataTable tbody").empty();
+            });
+
+            $('#modalCekMobil').modal('show').focus(); // Tampilkan modal
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+      }
+
+
+
+
+
+
+
+     
+        function handleBuatRPD() {
+            // Periksa apakah semua input form telah diisi
+            var isAllFilled = true;
+            $("#myForm .form-control").each(function () {
+                if ($(this).val() === "" && $(this).prop('required')) {
+                    isAllFilled = false;
+                }
+            });
+
+         
+            if (!isAllFilled) {
+                Swal.fire({
+                    title: 'Perhatian!',
+                    text: 'Silakan isi semua field yang diperlukan sebelum melanjutkan.',
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Ok'
+                });
+            } else {
+                // Jika semua input telah diisi, tampilkan SweetAlert untuk konfirmasi
+                Swal.fire({
+                    title: 'Cek dulu hasil RPD nya sudah betul belum?',
+                    html: '<p style="font-size: 14px; color: #6c757d;">Klik kirim akan mengirim ke Kepegawaian. Anda tetap diwajibkan buat RPD di nadine dengan dibantu pakai format yang terdownload.</p>',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Syudah, kirim ya',
+                    confirmButtonColor: "#66bb6a",
+                    cancelButtonColor: "#d33",
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                     
+                        submitForm(); 
+                    }
+                });
+            }
+        }
+
+        //Tanggal Input Hari ini
+        var tanggalInput = document.getElementById('tanggalinput');
+
+        var today = new Date();
+
+        var namaBulan = [
+        'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+        'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        ];
+
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = namaBulan[today.getMonth()];
+        var yyyy = today.getFullYear();
+
+        var tanggalHariIni = dd + ' ' + mm + ' ' + yyyy;
+        tanggalInput.value = tanggalHariIni;
+
+        //SUBMIT SHEETS
+        function submitForm() {
+            var nama = $("#nama").val();
+            var nip = $("#nip").val();
+            var pangkat = $("#pangkat").val();
+            var jabatan = $("#jabatan").val();
+            var nama2 = $("#nama2").val();
+            var nip2 = $("#nip2").val();
+            var pangkat2 = $("#pangkat2").val();
+            var jabatan2 = $("#jabatan2").val();
+             var harimulai = new Date($("#harimulai").data("original-date"));
+             var hariselesai = new Date($("#hariselesai").data("original-date"));
+            var waktuDari = $("#waktuDari").val();
+            var waktuSampai = $("#waktuSampai").val();
+            var alamat = $("#alamat").val();
+            var tempat = $("#tempat").val();
+            var lama = $("#lama").val();
+
+            var agenda = $("#agenda").val();
+            var output = $("#output").val();
+            var tanggalKirim = new Date().toISOString().slice(0, 10);
+
+            // Tambah 1 hari ke tanggal
+            harimulai.setDate(harimulai.getDate() + 1);
+            hariselesai.setDate(hariselesai.getDate() + 1);
+
+            // Buat string dalam format "YYYY-MM-DD"
+            var harimulaiISO = harimulai.toISOString().split('T')[0];
+            var hariselesaiISO = hariselesai.toISOString().split('T')[0];
+
+            // Buat objek data yang akan dikirim
+            var formData = new URLSearchParams();
+            formData.append('nama', nama);
+            formData.append('nip', nip);
+            formData.append('pangkat', pangkat);
+            formData.append('jabatan', jabatan);
+            formData.append('nama2', nama2);
+            formData.append('nip2', nip2);
+            formData.append('pangkat2', pangkat2);
+            formData.append('jabatan2', jabatan2);
+             formData.append('harimulai', harimulaiISO);
+             formData.append('hariselesai', hariselesaiISO);
+            formData.append('waktuDari', waktuDari);
+            formData.append('waktuSampai', waktuSampai);
+            formData.append('alamat', alamat);
+            formData.append('tempat', tempat);
+            formData.append('lama', lama);
+
+            formData.append('agenda', agenda);
+            formData.append('output', output);
+            formData.append('tanggalKirim', tanggalKirim);
+
+            fetch("/sendtosheets", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    showSuccessMessage(); 
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+
+        function showSuccessMessage() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data berhasil dikirim ke Kepegawaian.',
+                icon: 'success'
+            });
+        }
+    </script>
+</body>
+
+</html>
